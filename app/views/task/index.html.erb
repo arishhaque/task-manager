@@ -1,0 +1,9 @@
+<h1>Task Home </h1>
+<ul>
+<% tasks = @tasks['tasks'] %>
+<% tasks.each_index do |i| %>
+<li>
+<%= link_to(tasks[i]['name'], '/tasks/edit/' + tasks[i]['id'].to_s) %>
+</li>
+<% end %>
+</ul>

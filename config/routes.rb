@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "home#index"
   get 'home/index', to: 'task#index'
   get 'about', to: 'about#index'
+  get 'tasks', to: 'task#index'
+  get 'tasks/edit/:id', to: 'task#edit'
 end
