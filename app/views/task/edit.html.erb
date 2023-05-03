@@ -1,2 +1,4 @@
-<h1> Task edit </h1>
-<%= @task1 %>
+<h1> Edit Category </h1>
+<%= @task.name %>
+<%= @task.status %>
+<%= @task.category.name if @task.category != nil %>

@@ -1,31 +1,21 @@
 class TaskController < ApplicationController
-  def initialize
-    super
-    @tasks = {
-      "tasks" => [
-        {
-          "id" => 1,
-          "name" => "task1"
-        },
-        {
-          "id" => 2,
-          "name" => "task2"
-        }
-      ]
-    }
+  def index
+    @tasks = Task.all
   end
 
-  def index
-    @tasks.merge!(
-      {
-        "id" => 3,
-        "name" => "task3"
-      }
-    )
-  end
+  def show; end
+
+  def new; end
+
+  def create; end
 
   def edit
-    @task_id = params[:id]
-    @task = @tasks[@task_id]
+    @task = Task.find(params[:id])
   end
+
+  def update; end
+
+  def delete; end
+
+  def destroy; end
 end
