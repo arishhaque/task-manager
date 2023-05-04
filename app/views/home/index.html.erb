@@ -1,9 +1,9 @@
 <h1>Task Manager</h1>
 <h2>
-<%= link_to('About',
-   {
-     controller: 'about',
-     action: 'index'
-    }
-) %>
+<%= link_to('About', { controller: 'about', action: 'index' }) %> <br/>
+
+<%# or we can link like below %>
+<%= link_to('Tasks', tasks_path) %> <br/>
+
+<%= link_to('Categories', categories_path) %> <br/>
 </h2>
