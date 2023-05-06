@@ -1,1 +1,37 @@
-<h1>Category Home </h1>
+<%= link_to('Back to Homepage', {controller: 'home', action: 'index'}) %><br />
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+</style>
+<div class="categories index">
+  <h2>Categories</h2>
+
+  <%= link_to("Add New Category", new_category_path, class: 'action new') %>
+
+  <table class="listing" summary="Category list" style="width: 100%;">
+    <tr class="header">
+      <th>Category #</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name %></td>
+      <td class="actions">
+        <%= link_to("Show", category_path(category), class: 'action show') %> <strong> | </strong>
+        <%= link_to("Edit", edit_category_path(category), class: 'action edit') %> <strong> | </strong>
+        <%= link_to("Delete", delete_category_path(category), class: 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
